@@ -1,0 +1,22 @@
+require 'active_support/core_ext/object'
+require 'active_support/core_ext/string'
+require 'typhoeus'
+require 'xmlsimple'
+require 'hashie'
+
+require 'cloudcontrol/version.rb'
+require 'cloudcontrol/exceptions.rb'
+
+require 'cloudcontrol/connection.rb'
+require 'cloudcontrol/params.rb'
+# require 'cloudcontrol/xml.rb'
+require 'cloudcontrol/client.rb'
+
+require 'cloudcontrol/api/core.rb'
+require 'cloudcontrol/api/directory.rb'
+require 'cloudcontrol/api/image.rb'
+require 'cloudcontrol/api/network.rb'
+require 'cloudcontrol/api/server.rb'
+require 'cloudcontrol/api/vip.rb'
+require 'cloudcontrol/api/account.rb'
+require 'cloudcontrol/api/report.rb'
