@@ -18,7 +18,7 @@ module CloudControl
           method: type,
           body: body,
           userpwd: "#{@username}:#{@password}",
-            headers: {  'User-Agent' => 'ACP Ruby SDK' }
+            headers: { 'Accept' => 'application/json', 'User-Agent' => 'ACP Ruby SDK' }
         )
       end
     end

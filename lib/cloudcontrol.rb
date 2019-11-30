@@ -13,7 +13,7 @@ require 'cloudcontrol/params.rb'
 require 'cloudcontrol/client.rb'
 
 require 'cloudcontrol/api/core.rb'
-require 'cloudcontrol/api/directory.rb'
+# require 'cloudcontrol/api/directory.rb'
 require 'cloudcontrol/api/image.rb'
 require 'cloudcontrol/api/network.rb'
 require 'cloudcontrol/api/server.rb'

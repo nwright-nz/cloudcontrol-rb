@@ -1,68 +1,34 @@
-## Dimension Data Cloud gem 
+## Cloud Control Ruby gem 
 
-Dimension Data Cloud API gem designed for easy extensibility.
+Cloud Control Cloud API gem designed for easy extensibility.
+Note: This gem at present ONLY provides read functionality across the API. This is so that the Chef Inspec plugin written for Cloud Control can operate successfully. All the existing gems for this are 6 years old and appear abandoned, so I'm not sure there is much of a demand for this. There is also a lot of work to change the API calls to leverage MCP 2.0 apis.
+
+
 
 ### Install
 
 either install as a gem via Bundler
 ```
-gem install didata_cloud_sdk
+gem install cloudcontrol_sdk
 ```
 
-__or__
 
-clone into your project, install gems from `opsource.gemspec` and do:
-
-```
-$: << 'ddcloud/lib'
-require 'ddcloud.rb'
-```
 
 ### Usage
 
 ```
-require "ddcloud"
-api_base      = DDcloud::Client::API_URL[:eu]
+require "cloudcontrol_sdk"
+api_base      = CloudControl::Client::API_URL[:au]
 dev_org_id    = 'my-super-secret-org-numbersandletters'
 dev_user      = 'me'
 dev_password  = 'very secret'
 
-c = DDcloud::Client.new(api_base, dev_org_id, dev_user, dev_password)
+c = CloudControl::Client.new(api_base, dev_org_id, dev_user, dev_password)
 
 server = c.server.list(name: 'myfavoritevm')
-pp c.server.show_with_disks(server.network_id, server.id)
 ```
 
-### Examples
-
-See ```/examples``` for more examples.
 
 
-```
-#create a new network
-c.network.create("network-name", "description", "EU1")
-#list networks
-pp c.network.list
+Based on : https://github.com/udayakiran/opsource.
 
-```
-
-### Add your own API calls
-
-For already supported methods see:
-```
-api/directory.rb
-api/image.rb
-api/network.rb
-api/server.rb
-api/vip.rb
-```
-
-See `doc` folder for API info needed for adding you own methods. `api/core.rb` is the plumbing.
-
-See `lib/ddcloud/api` folder for examples how to add additional endpoints.
-
-Inspired by https://github.com/udayakiran/opsource.
-
-### TODO
-
-Write some tests. Make pull requests.

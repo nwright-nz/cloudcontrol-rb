@@ -1,8 +1,8 @@
 module CloudControl::API
   class Account < Core
     def myaccount()
-      endpoint "/myaccount"
-      get
+      endpoint "/user/myUser"
+      get_simple
     end
 
     def list()

@@ -5,7 +5,7 @@ module CloudControl
     # include CloudControl::XML
 
     attr_reader :api_base, :org_id, :username, :password
-    attr_reader :image, :directory, :network, :server, :account, :report
+    attr_reader :image, :network, :server, :account, :report
     attr_reader :datacenter, :default_password
 
     ### FILTERS
@@ -37,9 +37,9 @@ module CloudControl
       end
     end
 
-    def directory
-      CloudControl::API::Directory.new(self)
-    end
+    # def directory
+    #   CloudControl::API::Directory.new(self)
+    # end
 
     def image
       CloudControl::API::Image.new(self)
