@@ -1,13 +1,14 @@
 module CloudControl::API
   class Account < Core
-    def myaccount()
-      endpoint "/user/myUser"
+    def myaccount
+      endpoint '/user/myUser'
       get_simple
     end
 
-    def list()
-      org_endpoint "/account"
-      get
+    def list(options = {})
+      org_endpoint '/user/user'
+      query_params options
+      get_simple
     end
   end
 end

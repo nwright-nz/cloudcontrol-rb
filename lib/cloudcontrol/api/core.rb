@@ -4,8 +4,6 @@ module CloudControl::API
     def initialize(client)
       @client = client
     end
-
-
     ### client methods
 
     def log(*args)
@@ -15,7 +13,6 @@ module CloudControl::API
     def org_id
       @client.org_id
     end
-
 
     ### request options
 
